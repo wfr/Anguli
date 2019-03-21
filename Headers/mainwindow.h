@@ -34,6 +34,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QObject>
 #include <QMainWindow>
 #include "fingerprint_window.h"
 #include "impression_window.h"

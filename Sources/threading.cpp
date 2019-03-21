@@ -39,7 +39,7 @@
 #include "Noise/n_noise.h"
 #include "Noise/n_cv_type_converter.h"
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QDir>
 #include <QtXml/QDomDocument>
 #include <QTextStream>
@@ -448,11 +448,7 @@ void threaded_app::start()
     while(!is_GUI && !thread_pool.empty())
     {
         QApplication::processEvents();
-#ifdef WIN32
-        _sleep(1000);
-#else
-        sleep(1);
-#endif
+        QThread::sleep(1000);
     }
 }
 
@@ -581,11 +577,7 @@ void threaded_app::noise_start()
     while(!is_GUI && !thread_pool.empty())
     {
         QApplication::processEvents();
-#ifdef WIN32
-        _sleep(1000);
-#else
-        sleep(1);
-#endif
+        QThread::sleep(1000);
     }
 }
 

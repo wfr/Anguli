@@ -39,6 +39,7 @@
 #include <QDesktopWidget>
 #include <QToolTip>
 #include <iostream>
+#include <algorithm>
 
 Impression_Window::Impression_Window(QWidget *parent)
     :QMainWindow(parent), impressionW(new Ui::ImpressionWindow)
@@ -342,7 +343,7 @@ void Impression_Window::Impression_load_defaults()
 
     int processors = sysinfo.dwNumberOfProcessors;
 #else
-    int processors = sysconf(_SC_NPROCESSORS_ONLN);
+    int processors = std::max(1, int(std::thread::hardware_concurrency()));
 #endif
     
     if(processors > 1)

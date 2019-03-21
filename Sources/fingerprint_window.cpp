@@ -41,6 +41,7 @@
 #include <iomanip>
 #include <QToolTip>
 #include <time.h>
+#include <algorithm>
 
 Fingerprint_Window::Fingerprint_Window(QWidget *parent)
     :QMainWindow(parent), fingerprintW(new Ui::GeneratorWindow)
@@ -668,7 +669,7 @@ void Fingerprint_Window::Finger_load_defaults()
 
     int processors = sysinfo.dwNumberOfProcessors;
 #else
-    int processors = sysconf(_SC_NPROCESSORS_ONLN);
+    int processors = std::max(1, int(std::thread::hardware_concurrency()));
 #endif
 
 

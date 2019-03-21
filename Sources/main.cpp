@@ -35,13 +35,7 @@
 #include "global.h"
 #include "Noise/global.h"
 
-#include <QtGui/QApplication>
-#include <QtGui/QWindowsStyle>
-//#include <QtGui/QWindowsVistaStyle>
-//#include <QtGui/QMotifStyle>
-//#include <QtGui/QPlastiqueStyle>
-//#include <QtGui/QWindowsXPStyle>
-#include <QtGui/QCleanlooksStyle>
+#include <QApplication>
 #include <QLayout>
 #include <QPixmap>
 #include <QSplashScreen>
@@ -577,7 +571,6 @@ int main(int argc, char *argv[])
         is_GUI = true;
         QApplication a(argc, argv);
         //a.setStyle("motif");
-        a.setStyle(new QWindowsStyle);
         //QPalette palet = a.palette();
         a.setStyleSheet("QToolTip {\
             border: 1px solid darkgray;\

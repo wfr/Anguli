@@ -174,7 +174,7 @@ void Generator::generation(void) {
         cvLine(f_print1, cvPoint(x1, y1), cvPoint(x2, y2), white, wide, 4, 0);
     }
 
-    cvCopyImage(f_print1, noise_obj->f_print1);
+    cvCopy(f_print1, noise_obj->f_print1);
     Ipltomat2D(noise_obj->f_print1, noise_obj->f_print1_2Dmat);
     
     for (i = 0; i < noise::H + noise::margin; i++) {
@@ -190,7 +190,7 @@ void Generator::generation(void) {
 
 
         int k;
-        cvCopyImage(noise_obj->f_print1, noise_obj->f_print2);
+        cvCopy(noise_obj->f_print1, noise_obj->f_print2);
             
         for (i = 0; i < noise::H + noise::margin; i++) {
             for (j = 0; j < noise::W + noise::margin; j++) {
@@ -204,7 +204,7 @@ void Generator::generation(void) {
             filename << path_impr << "_" << k + 1 << "/fp_" << n_fo << "/" << n_fp << "." << image_type;
             //cout << filename.str() << endl;
 
-            cvCopyImage(noise_obj->f_print2, noise_obj->f_print1);
+            cvCopy(noise_obj->f_print2, noise_obj->f_print1);
             Ipltomat2D(noise_obj->f_print1, noise_obj->f_print1_2Dmat);
             for (i = 0; i < noise::H + noise::margin; i++) {
                 for (j = 0; j < noise::W + noise::margin; j++) {
