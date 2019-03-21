@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Images/iFinGen.png</file>
+        <file>Images/DSL.png</file>
+        <file>Images/front.png</file>
+        <file>Images/IISC.png</file>
+        <file>Images/splash_screen.png</file>
+    </qresource>
+</RCC>
