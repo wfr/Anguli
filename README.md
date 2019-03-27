@@ -1,13 +1,16 @@
-Anguli: Synthetic Fingerprint Generator
-updated by wfr.
+## Anguli: Synthetic Fingerprint Generator
 
-This repository has been updated to compile in 2019,
-using Qt and the latest OpenCV.
+Copyright © Indian Institute of Science, Bangalore, India
 
-Debian build instructions:
-aptitude install qtbase5-dev libopencv-dev libqxt-tulip-4.8-0
+http://dsl.cds.iisc.ac.in/projects/Anguli/
+
+### Modifications
+
+ * Updated to compile with Qt 5 and the current OpenCV version.
+ * UI fixes
+
+### Building (Debian unstable)
+```
+apt-get install qtbase5-dev libopencv-dev libqxt-tulip-4.8-0
 qmake .
-
-TODO:
-[ ] remove Qxt dependency
-[x] fix UI scaling
+```
