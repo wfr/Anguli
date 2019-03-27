@@ -121,8 +121,12 @@ void Noise::random_noise(IplImage *f_print) {
     a1 = W * .45 + ahaq_rand() * W * .15;
     a2 = (W + padding - a1);
 
-    b1 = H * .30 + ahaq_rand() * H * .05;
-    b2 = b1 + b1 * .25 + b1 * ahaq_rand() * .45;
+    /* Original parameters; produce somewhat small impressions...
+    //    b1 = H * .30 + ahaq_rand() * H * .05;
+    //    b2 = b1 + b1 * .25 + b1 * ahaq_rand() * .45;
+    */
+    b1 = H * .40 + ahaq_rand() * H * .15;
+    b2 = b1 + b1 * .25 + b1 * ahaq_rand() * .25;
     c1 = (H + padding - (b1 + b2));
     sx = 0;
     sy = 0;
@@ -134,6 +138,10 @@ void Noise::random_noise(IplImage *f_print) {
     sx = (W / 2 - a2 + (a1 + a2) / 2) + padding;
     sy = ((b2 + c1 / 2) + (H - (b1 + b2 + c1)) / 2) + padding;
 
+    /* ellipse(Mat& img, Point center, Size axes, double angle,
+     *  double startAngle, double endAngle, const Scalar& color,
+     *  int thickness=1, int lineType=8, int shift=0)
+     */
     cvEllipse(mask, cvPoint(sx, sy - c1 / 2), cvSize(a1, b2), 0, 90, 180,
             cvScalar(255, 255, 255), 1, 8, 0);
     cvEllipse(mask, cvPoint(sx, sy - c1 / 2), cvSize(a2, b2), 0, 0, 90,
