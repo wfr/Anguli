@@ -16,3 +16,5 @@ https://github.com/wfr/Anguli
 apt-get install qtbase5-dev libopencv-dev libqxt-tulip-4.8-0
 qmake .
 ```
+![Fingerprint](https://i.imgur.com/IZp34iS.png)
+![Fingerprint Impression](https://i.imgur.com/70d9I5y.png)
