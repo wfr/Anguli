@@ -6,6 +6,8 @@ http://dsl.cds.iisc.ac.in/projects/Anguli/
 
 ### Modifications
 
+https://github.com/wfr/Anguli
+
  * Updated to compile with Qt 5 and the current OpenCV version.
  * UI fixes
 
